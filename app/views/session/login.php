@@ -10,7 +10,7 @@
 <div class="container">
 
 	<div class = 'form-login' style="margin-top:100px;">
-		<h3>Inicio de sesi&oacute;n</h3>
+		<h3>T&iacute;tulo de la APP</h3>
 			
 			<?php echo $this->html->form( 'session/login/' , 'POST' , " name = 'login' id = 'login' class = 'form-horizontal' ") ?>
 				
