@@ -1,0 +1,65 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1286" measuredH="562" mockupW="1000" mockupH="550">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="286" y="12" w="1000" h="550" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <color>15658734</color>
+        <text>Organizador%20de%20eventos%0Ahttp%3A//eventosdocencia.ucol.mx</text>
+        <value>0</value>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="809" y="243" w="201" h="-1" measuredW="79" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <bold>false</bold>
+        <color>16777215</color>
+        <italic>true</italic>
+        <size>13</size>
+        <text/>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="738" y="246" w="-1" h="-1" measuredW="48" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Usuario</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="809" y="296" w="201" h="-1" measuredW="79" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <bold>false</bold>
+        <color>16777215</color>
+        <italic>true</italic>
+        <size>13</size>
+        <text/>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="726" y="299" w="-1" h="-1" measuredW="72" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Contrase%F1a</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::VRule" x="674" y="179" w="-1" h="216" measuredW="10" measuredH="100" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.5</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="562" y="273" w="-1" h="-1" measuredW="54" measuredH="28" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>20</size>
+        <text>Login</text>
+        <textOrientation>right</textOrientation>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="861" y="338" w="-1" h="-1" measuredW="79" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Login_loading%26bm%3BLogin_loading.bmml%26bm%3BLogin_loading.bmml%26bm%3BLogin_loading.bmml</href>
+        <icon>RightArrowIcon%7Cxsmall</icon>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22575%2C326%2C654%2C353%22%20href%3D%22Login_loading.bmml%22%20alt%3D%22Login_loading%22%20id%3D%229%22/%3E</map>
+        <text>Entrar</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
