@@ -31,8 +31,6 @@
 					$users = new users();
 					$user = $users->validate( $username , $password );
 
-					$return = array();
-
 					if ( isset( $user['idUser'] ) && $user['idUser'] != null && $user['idUser'] != "" ){
 
 						$this->session->login = true;
@@ -42,8 +40,7 @@
 						$this->session->usuario = $user['username'];
 						$this->session->perfil = $user['idProfile'];
 
-						$return['valid'] = 'true';
-						echo json_encode( $return );
+						$this->redirect("index/index")
 
 					}else{
 
@@ -54,13 +51,8 @@
 						$this->session->destroy("username");
 						$this->session->destroy("idProfile");
 
-						session_unset("vistas");
-
-						session_destroy();
 						
-						$this->session->login = false;
-						$return['valid'] = 'false';
-						echo json_encode( $return );
+						$this->session->login = false;			
 
 					}
 
@@ -73,12 +65,7 @@
 					$this->session->destroy("username");
 					$this->session->destroy("idProfile");
 
-					session_unset("vistas");
-
-					session_destroy();
-					
-					$return['valid'] = 'false';
-					echo json_encode( $return );
+					$this->session->login = false;	
 
 				}
 
@@ -115,9 +102,6 @@
 			$this->session->destroy("apellido");
 			$this->session->destroy("username");
 			$this->session->destroy("idProfile");
-
-			session_unset("vistas");
-
 
 			$this->redirect("index/index/");
 		}
