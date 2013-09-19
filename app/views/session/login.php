@@ -41,8 +41,6 @@
 				<div class="form-group" id = 'form-password'>
 					<div class="col-lg-4">
 
-						<button type="button" class="btn btn-warning btn-block" <?php echo utils::onclickHref("index/")?>>Atras</button>						
-
 					</div>
 
 					<div class="col-lg-6">
