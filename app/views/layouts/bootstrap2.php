@@ -76,42 +76,7 @@
 					</a>
 
 					<?php echo $this->html->linkTo("","index","class='brand brand-white'"); ?>
-					<div class="navbar nav-collapse collapse navbar-inverse-collapse">
-						<ul class="nav">
-							<li> <?php echo @$this->html->linkTo($_SESSION['vistas'][0], @$_SESSION['vistas'][1]."/", ""); ?> </li>
-						</ul>
-
-						<ul class="nav pull-right">
-
-							<!-- <form class="navbar-search">
-								<input type="text" class="search-query" placeholder="Buscar">
-							</form> -->
-
-							<?php if ( $this->session->check('login') === true ) { ?>
-
-								<li class="dropdown">
-									
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-										<?php echo @$this->session->nombre. " " . @$this->session->apellido . " ( " . @$this->session->usuario ." )"; ?>
-										<b class="caret"></b>
-									</a>
-
-									<ul class="dropdown-menu">
-										<li><?php echo $this->html->linkTo( "Eventos creados" , "events?user=".$this->session->usuario , " " ); ?></li>
-										<li><?php echo $this->html->linkTo( "Editar perfil" , "users/update/{$this->session->idUser}" , "" ); ?></li>
-										<li class="divider"></li>
-										<li><?php echo $this->html->linkTo( "Cerrar sesi&oacute;n" , "session/logout" , "" ); ?></li>
-									</ul>
-
-								</li>
-
-							<?php }else{ ?>
-								<li class="dropdown">
-									<?php echo $this->html->linkTo("Iniciar sesi&oacute;n","session/login/","class='dropdown-toggle'") ?>
-								</li>
-							<?php } ?>
-						</ul>
-					</div><!-- /.nav-collapse -->
+					
 				</div>
 			</div><!-- /navbar-inner -->
 		</div><!-- /navbar -->
