@@ -1,7 +1,6 @@
 <?php
 	class Index_controller extends appcontroller { 
-		p
-		ublic function __construct () { 
+		public function __construct () { 
 			parent ::__construct () ;
 			$this->view->setLayout("bootstrap2");
 			$this->title_for_layout("T&iacute;tulo de la app");
