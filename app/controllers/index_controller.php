@@ -12,6 +12,8 @@
 
 		public function index( $id = null ) {
 
+
+
 			// REDIRECT IF NOT ALREADY LOGGED IN
 			if ( ! $this->session->check('login') ) 
 				$this->redirect('session/login/');

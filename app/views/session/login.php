@@ -9,6 +9,14 @@
 
 <div class="container">
 
+	<?php
+
+	if ($errorHtml != "") {
+		echo $errorHtml;
+	}
+
+	?>
+
 	<div class = 'form-login' style="margin-top:100px;">
 		<h3>T&iacute;tulo de la APP</h3>
 			
@@ -45,7 +53,7 @@
 
 					<div class="col-lg-6">
 
-						<button type="submit" class="btn btn-success btn-block" onclick="loginModal('myModal')">Entrar</button>						
+						<button type="submit" class="btn btn-success btn-block" >Entrar</button>						
 
 					</div>
 
@@ -55,23 +63,6 @@
 
 	</div>
 
-
-	<!-- Modal -->
-	<div class="modal fade" id="myModal">
-		<div class = 'modal-dialog'>
-			<div class = 'modal-content'>
-				<div class="modal-body">
-					Espere por favor
-					<center>
-						<div class="progress progress-striped active">
-							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-							</div>
-						</div>
-					</center>
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
 
 <p>&nbsp;</p>
@@ -83,14 +74,6 @@
 <script type="text/javascript">
 	
 	$(function(){
-		
-		$('#myModal').modal({
-			backdrop: 'static',
-			keyboard: false ,
-			show: false
-		});
-
-		login_url = '<?php echo utils::urlConvert("session/login/"); ?>';
 		
 		$('#inputUsername').focus();
 
