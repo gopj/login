@@ -22,19 +22,5 @@
 			return $query;
 		}
 
-		public function userProfile(){
-
-			$query = $this->findAllBySql("
-				SELECT 
-					u.*, p.txt_profile 
-				FROM 
-					users u, profiles p
-				WHERE
-					u.idProfile = p.idProfile;
-			");
-
-			return $query;
-
-		}
 	}
 ?>
