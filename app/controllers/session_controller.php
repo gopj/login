@@ -40,7 +40,7 @@
 						$this->session->usuario = $user['username'];
 						$this->session->perfil = $user['idProfile'];
 
-						$this->redirect("index/index")
+						$this->redirect("index/index");
 
 					}else{
 
