@@ -21,6 +21,8 @@
 			if ( $this->session->check('login') ) 
 				$this->redirect('index/');
 			
+			$errorType = 0;
+
 			if ( $this->data ) {
 
 				if ( $this->data['inputUsername'] != "" && $this->data['inputPassword'] != "" ) {
@@ -51,59 +53,35 @@
 
 						$this->session->login = true;
 						$this->session->idUser = $user['idUser'];
-						$this->session->nombre = $user['nombre'];
-						$this->session->apellido = $user['apellido'];
-						$this->session->usuario = $user['username'];
-						$this->session->perfil = $user['idProfile'];
 
 						$this->redirect("index/index");
 
 					}else{
-
 						$this->session->destroy("login");
 						$this->session->destroy("idUser");
-						$this->session->destroy("nombre");
-						$this->session->destroy("apellido");
-						$this->session->destroy("username");
-						$this->session->destroy("idProfile");
 
-						
-						$this->session->login = false;
-
-						$this->session->flash("1");
-						$this->render();
+						$errorType = 1;
 					}
 
 				}else{
-
 					$this->session->destroy("login");
 					$this->session->destroy("idUser");
-					$this->session->destroy("nombre");
-					$this->session->destroy("apellido");
-					$this->session->destroy("username");
-					$this->session->destroy("idProfile");
 
-					$this->session->login = false;	
-
-					$this->session->flash("2");
-					$this->render();
+					$errorType = 2;
 				}
-
-			}else{
-
-				$errorHtml = "";
-				if ( $this->session->issetflash() ){
-					$errorType = $this->session->getFlash();
-					if ($errorType == "1") {
-						$errorHtml = "<div class ='alert alert-danger'><b>Favor de verificar sus datos</b></div>";
-					}elseif ($errorType == "2") {
-						$errorHtml = "<div class ='alert alert-info'><b>Campos en blanco</b></div>";
-					}
-				}
-				$this->view->errorHtml = $errorHtml;
-
-				$this->render();
+	
 			}
+
+			$errorHtml = "";
+
+			if ($errorType == 1) {
+				$errorHtml = "<div class ='alert alert-danger'><b>Favor de verificar sus datos</b></div>";
+			}elseif ($errorType == 2) {
+				$errorHtml = "<div class ='alert alert-info'><b>Campos en blanco</b></div>";
+			}
+			
+			$this->view->errorHtml = $errorHtml;
+			$this->render();
 
 		}
 
@@ -115,8 +93,6 @@
 		public function info( $id = null ) {
 			if ( ! $this->session->check('login') )
 				$this->redirect('session/login/');
-			
-
 		}
 
 

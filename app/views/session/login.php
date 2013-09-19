@@ -11,9 +11,12 @@
 
 	<?php
 
-	if ($errorHtml != "") {
-		echo $errorHtml;
+	if (isset($errorHtml)) {
+		if ($errorHtml != "") {
+			echo @$errorHtml;
+		}	
 	}
+	
 
 	?>
 
