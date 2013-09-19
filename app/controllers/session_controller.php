@@ -4,6 +4,7 @@
 			parent ::__construct () ;
 			$this->view->setLayout("bs3-session");
 			$this->title_for_layout('Agenda') ;
+			date_default_timezone_set('America/Mexico_City');
 		}
 
 		//
@@ -41,20 +42,33 @@
 							$_log = $logs->findBy('idUser',$user['idUser']);
 							
 							if ( $_log['idLog'] != null ){
-								return;
+								$errorType = 3;
 							}
+
+							// 
+							// SE GUARDA EL LOG PERO NO INICIA SESION
+							// 
+
+							$newLog = new logs();
+							$newLog['idUser'] = $user['idUser'];
+							$newLog['created'] = date("Y-m-d H:i:s");
+							$newLog->save();
 							
+						}else{
+
+							$newLog = new logs();
+							$newLog['idUser'] = $user['idUser'];
+							$newLog['created'] = date("Y-m-d H:i:s");
+							$newLog->save();
+
+							$this->session->login = true;
+							$this->session->idUser = $user['idUser'];
+
+							$this->redirect("index/index");
+
 						}
 
-						$newLog = new logs();
-						$newLog['idUser'] = $user['idUser'];
-						$newLog['created'] = date("Y-m-d H:i:s");
-						$newLog->save();
-
-						$this->session->login = true;
-						$this->session->idUser = $user['idUser'];
-
-						$this->redirect("index/index");
+						
 
 					}else{
 						$this->session->destroy("login");
@@ -77,7 +91,9 @@
 			if ($errorType == 1) {
 				$errorHtml = "<div class ='alert alert-danger'><b>Favor de verificar sus datos</b></div>";
 			}elseif ($errorType == 2) {
-				$errorHtml = "<div class ='alert alert-info'><b>Campos en blanco</b></div>";
+				$errorHtml = "<div class ='alert alert-warning'><b>Campos en blanco</b></div>";
+			}elseif ($errorType == 3) {
+				$errorHtml = "<div class ='alert alert-danger'><b>Ya habian iniciado sesi&oacute;n con esta cuenta</b></div>";
 			}
 			
 			$this->view->errorHtml = $errorHtml;
