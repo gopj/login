@@ -75,7 +75,7 @@
 						<span class="icon-bar"></span>
 					</a>
 
-					<?php echo $this->html->linkTo("Agenda","index","class='brand brand-white'"); ?>
+					<?php echo $this->html->linkTo("","index","class='brand brand-white'"); ?>
 					<div class="navbar nav-collapse collapse navbar-inverse-collapse">
 						<ul class="nav">
 							<li> <?php echo @$this->html->linkTo($_SESSION['vistas'][0], @$_SESSION['vistas'][1]."/", ""); ?> </li>
