@@ -44,8 +44,6 @@
 	</head>
 
 	<body>
-		<?php echo "BT3" ?>
-
 
 		<div class="visible-lg">			
 		
