@@ -2,7 +2,7 @@
 	class reporte_controller extends appcontroller { 
 		public function __construct () { 
 			parent ::__construct () ;
-			$this->view->setLayout("bootstrap2");
+			$this->view->setLayout("bootstrap3");
 			$this->title_for_layout("T&iacute;tulo de la app");
 		}
 
