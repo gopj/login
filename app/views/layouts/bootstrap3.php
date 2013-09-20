@@ -30,6 +30,7 @@
 		<?php
 			echo $this->html->charsetTag("UTF-8");
 			echo $this->html->includeCss("bootstrap3/css/bootstrap");
+			echo $this->html->includeCss("encuesta");
 		?>
 
 		<?php
@@ -45,7 +46,7 @@
 
 	<body>
 
-		<div class="visible-lg">			
+		<div class="visible-lg visible-md">			
 		
 			<div class = 'container'>
 
@@ -57,27 +58,12 @@
 
 		</div> <!-- LG -->
 
-
-
-
-		<div class="visible-md ">
-			
-			<div class = 'container'>
-
-				
-
-
-				<?php echo utils::br(3); ?>
-
-				<?php echo $content_for_layout ?>
-
+		<div class="visible-sm visible-xs">
+			<div class="container">
+				<?php echo $content_for_layout ?>	
 			</div>
-
-		</div> <!-- MD -->
-
-		<div class="visible-sm">
-			<?php echo $content_for_layout ?>
 		</div>  <!-- SM -->
+
 		
 	</body>
 

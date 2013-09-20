@@ -31,7 +31,7 @@
 		<?php
 			echo $this->html->charsetTag("UTF-8");
 			echo $this->html->includeCss("bootstrap3/css/bootstrap");
-			echo $this->html->includeCss("agenda");
+			echo $this->html->includeCss("encuesta");
 		?>
 
 		<?php
