@@ -26,5 +26,5 @@ define('DB_User', 'root');
 define('DB_Password', '');
 define('DB_Port', false);
 define('Path', "http://localhost/login/");
-define('Validate',falses);
+define('Validate',false);
 ?>
