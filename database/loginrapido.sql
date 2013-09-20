@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-09-2013 a las 01:41:11
+-- Tiempo de generación: 20-09-2013 a las 22:10:55
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -33,6 +33,34 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `idUser` int(11) NOT NULL,
   `created` datetime NOT NULL,
   PRIMARY KEY (`idLog`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=7 ;
+
+--
+-- Volcado de datos para la tabla `logs`
+--
+
+INSERT INTO `logs` (`idLog`, `idUser`, `created`) VALUES
+(1, 1, '2013-09-19 02:54:29'),
+(2, 1, '2013-09-18 19:57:39'),
+(3, 1, '2013-09-18 20:00:45'),
+(4, 1, '2013-09-18 20:02:40'),
+(5, 1, '2013-09-20 14:56:18'),
+(6, 1, '2013-09-20 14:56:40');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `registros`
+--
+
+CREATE TABLE IF NOT EXISTS `registros` (
+  `idRegistro` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(150) COLLATE utf8_bin NOT NULL,
+  `carrera` varchar(60) COLLATE utf8_bin NOT NULL,
+  `sexo` char(1) COLLATE utf8_bin NOT NULL,
+  `semestre` tinyint(4) NOT NULL,
+  `facultad` int(11) NOT NULL,
+  PRIMARY KEY (`idRegistro`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
