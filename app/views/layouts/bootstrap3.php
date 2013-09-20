@@ -30,19 +30,11 @@
 		<?php
 			echo $this->html->charsetTag("UTF-8");
 			echo $this->html->includeCss("bootstrap3/css/bootstrap");
-			echo $this->html->includeCss("agenda");
-			echo $this->html->includeCss("bootstrap-datetimepicker.min");
-			echo $this->html->includeCss("jquery-ui-1.10.3.custom");
-			echo $this->html->includeCss("jquery-ui-timepicker-addon");
 		?>
 
 		<?php
 			echo $this->html->includeJs("jquery-1.10.1.min");
 			echo $this->html->includeJs("bootstrap3/bootstrap");
-			echo $this->html->includeJs("agenda_login");
-			echo $this->html->includeJs("bootstrap-datetimepicker.min");
-			echo $this->html->includeJs("jquery-ui-1.10.3.custom");
-			echo $this->html->includeJs("jquery-ui-timepicker-addon");
 		?>
 
 		<script type="text/javascript">
@@ -59,46 +51,6 @@
 		
 			<div class = 'container'>
 
-				<div class="navbar navbar-inverse navbar-fixed-top">
-
-					<?php echo $this->html->linkTo( "Agenda" , "index/index" , " class = 'navbar-brand brand-white' " ); ?>
-					<ul class = 'nav navbar-nav'>
-						<li> <?php echo $this->html->linkTo( "Crear evento" , "events/create/" ); ?> </li>
-						<li>
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle navbar-btn" data-toggle="dropdown">
-									Mostrar por <span class='caret'></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><?php echo $this->html->linkTo( "Dia" , "event/index" , "" ); ?></li>
-									<li><?php echo $this->html->linkTo( "Semana" , "event/index" , "" ); ?></li>
-									<li><?php echo $this->html->linkTo( "Mes" , "event/index" , "" ); ?></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-
-					
-
-					<!-- SEARCH -->
-					<div class="btn-group pull-right" style="margin-left:50px;">
-						<button type="button" class="btn btn-default dropdown-toggle navbar-btn" data-toggle="dropdown">
-							{Nombre} <span class='caret'></span>
-						</button>
-						<ul class="dropdown-menu">
-							<li><?php echo $this->html->linkTo( "Eventos creados" , "event/index" , "" ); ?></li>
-							<li><?php echo $this->html->linkTo( "Editar perfil" , "event/index" , "" ); ?></li>
-							<li class="divider"></li>
-							<li><?php echo $this->html->linkTo( "Cerrar sesi&oacute;n" , "event/index" , "" ); ?></li>
-						</ul>
-					</div>
-
-					<?php echo $this->html->form( 'session/login/' , 'POST' , " name = 'form-search' id = 'form-search' class = 'navbar-form pull-right' ") ?>
-						<?php echo $this->html->textField( 'form-search-query' , " class = 'form-control' style='width:250px;' placeholder = 'Busqueda' " ); ?>
-					</form>
-
-				</div>
-
 				<?php echo utils::br(3); ?>
 
 				<?php echo $content_for_layout ?>
@@ -114,45 +66,8 @@
 			
 			<div class = 'container'>
 
-				<div class="navbar navbar-inverse navbar-fixed-top">
+				
 
-					<?php echo $this->html->linkTo( "Agenda" , "index/index" , " class = 'navbar-brand brand-white' " ); ?>
-					<ul class = 'nav navbar-nav'>
-						<li> <?php echo $this->html->linkTo( "Crear evento" , "event/create/" ); ?> </li>
-						<li>
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle navbar-btn" data-toggle="dropdown">
-									Mostrar por <span class='caret'></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><?php echo $this->html->linkTo( "Dia" , "event/index" , "" ); ?></li>
-									<li><?php echo $this->html->linkTo( "Semana" , "event/index" , "" ); ?></li>
-									<li><?php echo $this->html->linkTo( "Mes" , "event/index" , "" ); ?></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-
-					
-
-					<!-- SEARCH -->
-					<div class="btn-group pull-right" style="margin-left:50px;">
-						<button type="button" class="btn btn-default dropdown-toggle navbar-btn" data-toggle="dropdown">
-							{Nombre} <span class='caret'></span>
-						</button>
-						<ul class="dropdown-menu">
-							<li><?php echo $this->html->linkTo( "Eventos creados" , "event/index" , "" ); ?></li>
-							<li><?php echo $this->html->linkTo( "Editar perfil" , "event/index" , "" ); ?></li>
-							<li class="divider"></li>
-							<li><?php echo $this->html->linkTo( "Cerrar sesi&oacute;n" , "event/index" , "" ); ?></li>
-						</ul>
-					</div>
-
-					<?php echo $this->html->form( 'session/login/' , 'POST' , " name = 'form-search' id = 'form-search' class = 'navbar-form pull-right' ") ?>
-						<?php echo $this->html->textField( 'form-search-query' , " class = 'form-control' style='width:250px;' placeholder = 'Busqueda' " ); ?>
-					</form>
-
-				</div>
 
 				<?php echo utils::br(3); ?>
 
