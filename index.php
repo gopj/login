@@ -59,7 +59,21 @@ function __autoload($className) {
 		}else break;
 	}
 	if(!$success) {
-		die("Could not include class file '".$className."' ");
+	   // Obtener archivos de la libreria PHPExcel
+        $phpExcelPath = Absolute_Path.APPDIR.DIRSEP.'libs'.DIRSEP.'phpexcel'.DIRSEP;
+        $xPath = explode("_",$className);
+        foreach($xPath as $directory){
+            $phpExcelPath .= $directory.DIRSEP;
+        }
+
+        $file = substr($phpExcelPath,0,-1).".php";
+
+        if(file_exists($file)){
+            require_once($file);
+            $success = true;
+        }else{
+            die("Could not include class file '".$className."' ");
+        }
 	}
 }
 
