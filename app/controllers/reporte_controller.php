@@ -13,35 +13,52 @@
 		public function index( $id = null ) {
 
 			$registros = new registros();
+			$generated = false;
 
+			if ($this->data) {
+				$generated = true;
+				$facultad = $this->data['facultad'];
+
+				$programasEducativos = $registros->getProgramasEducativos($facultad);
+				$estudiantesFaltantes = $registros->getEstudiantesFaltantes($facultad);
+				// utils::pre($programasEducativos);
+				$this->view->programasEducativos = $programasEducativos;
+				$this->view->estudiantesFaltantes = $estudiantesFaltantes;
+				if ( count($programasEducativos) > 0) {
+				
+					$aEncuestar = array();
+					$encuestados = array();
+
+
+					foreach ($programasEducativos as $key => $value) {
+						$aEncuestar[] = $registros->getAEncuestar($value['carrera']);
+						$encuestados[] = $registros->getEncuestados($value['carrera']);
+					}
+					// utils::pre($aEncuestar);
+					$this->view->encuestados = $encuestados;
+					$this->view->aEncuestar = $aEncuestar;
+					
+					$faltan = array();
+					for ($i=0; $i < count($programasEducativos) ; $i++) { 
+						$faltan[$i] = $aEncuestar[$i]['AEncuestar'] - $encuestados[$i]['encuestados'];
+					}
+
+					$this->view->faltan = $faltan;
+
+				}
+			}
+
+			$this->view->generated = $generated;
 			$this->view->facultades = $registros->getFacultades();
 			$this->render();
 		}
 
 		public function generar($id = null) {
-			if ($id==null) $this->redirect("reporte/index");
 
+			$facultad = $this->data['facultad'];
 			$registros = new registros();
-			$programasEducativos = $registros->getProgramasEducativos($id);
 
-			if ( count($programasEducativos) > 0) {
-			
-				$aEncuestar = array();
-				$encuestados = array();
-				$estudiantesFaltantes = array();
-
-				foreach ($programasEducativos as $key => $value) {
-					$aEncuestar[] = $registros->getAEncuestar($value['carrera']);
-					$encuestados[] = $registros->getEncuestados($value['carrera']);
-					$estudiantesFaltantes[] = $registros->getEstudiantesFaltantes($value['carrera']);
-				}
-
-				$faltan = array();
-				foreach ($aEncuestar as $key => $value) {
-					$faltan[] = $encuestados[$key] - value;
-				}
-
-			}
+				
 
 			$this->view->facultades = $registros->getFacultades();
 			$this->render();

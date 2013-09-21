@@ -13,7 +13,11 @@
 						registros
 				");
 
-			return $query;
+			foreach ($query as $key => $value) {
+				$return[] = $value['facultad'];
+			}
+
+			return $return;
 		}
 
 		public function getProgramasEducativos($value='')
@@ -27,6 +31,9 @@
 						facultad = '{$value}'
 				");
 
+			// foreach ($query as $key => $value) {
+			// 	$return = $value['']
+			// }
 			return $query;
 		}
 
@@ -34,7 +41,7 @@
 		{
 			$query = $this->findBySql("
 					SELECT
-						sum(nocuenta)
+						count(no_cuenta) as AEncuestar
 					FROM
 						registros
 					WHERE
@@ -48,11 +55,12 @@
 		{
 			$query = $this->findBySql("
 					SELECT
-						sum(nocuenta)
+						count(no_cuenta) as encuestados
 					FROM
-						registros
+						logs, registros
 					WHERE
-						carrera = '{$value}'
+						logs.idUser = registros.no_cuenta	AND
+						registros.carrera = '{$value}'
 				");
 
 			return $query;
@@ -62,12 +70,20 @@
 		public function getEstudiantesFaltantes($value='')
 		{
 			$query = $this->findAllBySql("
-					SELECT
-						sum(nocuenta)
+					SELECT 
+						registros.nombre as nombre, registros.carrera as carrera
 					FROM
 						registros
 					WHERE
-						carrera = '{$value}'
+						no_cuenta not in (
+							SELECT
+									idUser
+							FROM
+									logs
+						) 
+					AND
+						facultad = '{$value}'
+					GROUP BY facultad
 				");
 
 			return $query;
