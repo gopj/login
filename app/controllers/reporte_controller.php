@@ -18,7 +18,7 @@
 			if ($this->data) {
 				$generated = true;
 				$facultad = $this->data['facultad'];
-
+				$this->view->facultad = $facultad;
 				$programasEducativos = $registros->getProgramasEducativos($facultad);
 				$estudiantesFaltantes = $registros->getEstudiantesFaltantes($facultad);
 				// utils::pre($programasEducativos);

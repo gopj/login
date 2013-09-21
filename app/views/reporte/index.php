@@ -34,7 +34,7 @@
 </div>
 
 <div class="row">
-	<div class="col">
+	<div class="col-md-10">
 		<table class="table table-striped">
 			<thead>
 				<th>Programa educativo</th>
@@ -55,6 +55,7 @@
 				?>
 			</tbody>
 		</table>
+		<?php echo $this->html->linkTo("Descargar reporte","excel/reporte/{$facultad}","class='btn btn-primary pull-right'"); ?>
 	</div>
 </div>
 
@@ -80,6 +81,7 @@
 				?>
 			</tbody>
 		</table>
+		<?php echo $this->html->linkTo("Descargar reporte","excel/eFaltantes/{$facultad}","class='btn btn-primary pull-right'"); ?>
 	</div>
 </div>
 
