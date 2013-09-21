@@ -14,6 +14,11 @@ class excel_controller extends appcontroller {
 	public function reporte($facultad){
 		$objExcel = new xlsx();
 		$objExcel->setTitle("Reporte");
+
+		$objExcel->setColumnWidth('A', 40);
+		$objExcel->setColumnWidth('B', 20);
+		$objExcel->setColumnWidth('C', 20);
+		$objExcel->setColumnWidth('D', 20);
 		
 		$objExcel->setCell("A1", "Programa educativo");	
 		$objExcel->setCell("B1", "A encuestar");
