@@ -1,4 +1,4 @@
-CREATE DATABASE  IF EXISTS `loginrapido` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
+CREATE DATABASE  IF NOT EXISTS `loginrapido` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 USE `loginrapido`;
 -- MySQL dump 10.13  Distrib 5.5.16, for Win32 (x86)
 --
