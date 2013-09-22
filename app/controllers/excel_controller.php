@@ -20,10 +20,10 @@ class excel_controller extends appcontroller {
 		$objExcel->setColumnWidth('C', 20);
 		$objExcel->setColumnWidth('D', 20);
 		
-		$objExcel->setCell("A1", "Programa educativo");	
-		$objExcel->setCell("B1", "A encuestar");
-		$objExcel->setCell("C1", "Encuestados");
-		$objExcel->setCell("D1", "Faltan");
+		$objExcel->setCell("A1", "PROGRAMAA EDUCATIVO");	
+		$objExcel->setCell("B1", "A ENCUESTAR");
+		$objExcel->setCell("C1", "ENCUESTADOS");
+		$objExcel->setCell("D1", "FALTAN");
 
 		$registros = new registros();
 		$generated = true;
@@ -79,8 +79,8 @@ class excel_controller extends appcontroller {
 		$registros = new registros();
 		$objExcel->setTitle("Estudiantes Faltantantes de " . $facultad);
 		
-		$objExcel->setCell("A1", "Nombre");	
-		$objExcel->setCell("B1", "Programa");
+		$objExcel->setCell("A1", "NOMBRE");	
+		$objExcel->setCell("B1", "PROGRAMA");
 
 
 		$estudiantesFaltantes = $registros->getEstudiantesFaltantes($facultad);
