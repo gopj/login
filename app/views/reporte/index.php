@@ -75,8 +75,10 @@
 			<tbody>
 				<?php
 				foreach ($estudiantesFaltantes as $key => $value) {
-					echo "<td>{$value['nombre']}</td>";
-					echo "<td>{$value['carrera']}</td>";
+					echo "<tr>";
+						echo "<td>{$value['nombre']}</td>";
+						echo "<td>{$value['carrera']}</td>";
+					echo "</tr>";
 				}
 				?>
 			</tbody>
@@ -85,5 +87,5 @@
 	</div>
 </div>
 
-<?php } ?>
+<?php echo utils::br(5);} ?>
 </html>

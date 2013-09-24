@@ -83,7 +83,7 @@
 						) 
 					AND
 						facultad = '{$value}'
-					GROUP BY facultad
+
 				");
 
 			return $query;
