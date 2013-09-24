@@ -25,7 +25,7 @@ class excel_controller extends appcontroller {
 		$objExcel->setBold("C1");
 		$objExcel->setBold("D1");
 
-		$objExcel->setCell("A1", "PROGRAMAA EDUCATIVO");	
+		$objExcel->setCell("A1", "PROGRAMA EDUCATIVO");	
 		$objExcel->setCell("B1", "A ENCUESTAR");
 		$objExcel->setCell("C1", "ENCUESTADOS");
 		$objExcel->setCell("D1", "FALTAN");
