@@ -20,6 +20,11 @@ class excel_controller extends appcontroller {
 		$objExcel->setColumnWidth('C', 20);
 		$objExcel->setColumnWidth('D', 20);
 		
+		$objExcel->setBold("A1");
+		$objExcel->setBold("B1");
+		$objExcel->setBold("C1");
+		$objExcel->setBold("D1");
+
 		$objExcel->setCell("A1", "PROGRAMAA EDUCATIVO");	
 		$objExcel->setCell("B1", "A ENCUESTAR");
 		$objExcel->setCell("C1", "ENCUESTADOS");
@@ -48,9 +53,11 @@ class excel_controller extends appcontroller {
 			$this->view->encuestados = $encuestados;
 			$this->view->aEncuestar = $aEncuestar;
 			
+			$faltanTotal = 0;
 			$faltan = array();
 			for ($i=0; $i < count($programasEducativos) ; $i++) { 
 				$faltan[$i] = $aEncuestar[$i]['AEncuestar'] - $encuestados[$i]['encuestados'];
+				$faltanTotal += $faltan[$i];
 			}
 
 
@@ -63,12 +70,17 @@ class excel_controller extends appcontroller {
 				$f++;
 			}
 
+			$objExcel->setBold("C4");
+			$objExcel->setCell("C4", "TOTAL");	
+
+			$body[$f][3] = $faltanTotal;
+
 
 			$header = array();
 		
 			$footer = array();
 			
-			$objExcel->addTable($header, $body, $footer, 'A1', TRUE);
+			$objExcel->addTable($header, $body, $footer, 'A1', FALSE);
 
 			$objExcel->download();
 		}
@@ -78,6 +90,12 @@ class excel_controller extends appcontroller {
 		$objExcel = new xlsx();
 		$registros = new registros();
 		$objExcel->setTitle("Estudiantes Faltantantes de " . $facultad);
+
+		$objExcel->setColumnWidth('A', 40);
+		$objExcel->setColumnWidth('B', 40);
+
+		$objExcel->setBold("A1");
+		$objExcel->setBold("B1");
 		
 		$objExcel->setCell("A1", "NOMBRE");	
 		$objExcel->setCell("B1", "PROGRAMA");
@@ -97,7 +115,7 @@ class excel_controller extends appcontroller {
 	
 		$footer = array();
 		
-		$objExcel->addTable($header, $body, $footer, 'A1', TRUE);
+		$objExcel->addTable($header, $body, $footer, 'A1', FALSE);
 
 		$objExcel->download();
 	}
